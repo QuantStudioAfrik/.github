@@ -120,10 +120,10 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 ### ✅ À faire
 
 - **Tout tourne en Docker Compose.** Un projet, un `docker-compose.yml`, et l'hôte reste propre.
-- **Les secrets vivent dans Passbolt** (ou un dossier `secrets/` injecté à l'init), jamais dans git.
+- **Les secrets vivent dans Passbolt**, jamais dans git.
 - **Front en `pnpm`.** Le lockfile fait foi.
-- **Modules Odoo sous le préfixe `qs_`**, avec l'en-tête de licence QSEL-1.0 en tête de fichier.
 - **Un README par projet** : stack, lancement local, déploiement. Si tu ne sais pas expliquer le démarrage en quelques lignes, c'est ça, le vrai bug.
+- **Les règles propres à un projet vivent dans son repo** (son `README`, son `CLAUDE.md`). Ici, on ne garde que le général.
 
 </td>
 <td width="50%" valign="top">
@@ -131,7 +131,6 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 ### ❌ À éviter
 
 - **Pas de `Co-Authored-By` dans les commits.** Jamais. C'est notre historique, il reste sobre.
-- **Aucune référence externe** (autre éditeur, Enterprise, clean-room…) dans le code, les commentaires ou les messages git.
 - **Pas de secret dans git.** Si ça arrive : fais tourner le secret, *puis* nettoie l'historique. Dans cet ordre.
 - **Pas de `npm`/`npx` côté front.** On est en `pnpm`, on y tient.
 - **Pas de code sans design approuvé.** On cadre, on valide, *ensuite* on code.
@@ -145,18 +144,38 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 ## 5. Workflow Git
 
 > [!IMPORTANT]
-> **En bref :** on branche, on ouvre une PR, on fait relire, on merge propre. On ne pousse pas en direct sur la branche déployable.
+> **En bref :** on suit **git-flow** pour les branches et **Conventional Commits** pour les messages. Deux standards, zéro débat à avoir.
 
-**Branches**
-- Une branche par sujet : `feat/<description-courte-kebab>` pour une fonctionnalité, `fix/<description-courte-kebab>` pour un correctif.
-- La branche déployable reste toujours dans un état livrable.
+### Branches : git-flow
 
-**Commits**
-- Mode impératif : « Ajoute l'endpoint de matching », pas « Ajouté », pas « des trucs ».
+| Branche | Ça sert à quoi | On branche depuis | Ça fusionne dans |
+|---|---|---|---|
+| `main` | La prod, uniquement des versions taguées | — | — |
+| `develop` | L'intégration, là où tout se rejoint | `main` | — |
+| `feature/*` | Une fonctionnalité | `develop` | `develop` |
+| `release/*` | Préparer une version | `develop` | `main` **et** `develop` |
+| `hotfix/*` | Éteindre un feu en prod | `main` | `main` **et** `develop` |
+
+Règle simple : on ne pousse **jamais** en direct sur `main` ni `develop`. Tout passe par une branche et une PR.
+
+### Commits : Conventional Commits
+
+Format : `type(scope): description`, à l'impératif.
+
+```
+feat(auth): ajoute le refresh token
+fix(paie): corrige l'arrondi CNSS
+docs(readme): complète la section serveurs
+```
+
+Types courants : `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`. Un changement cassant ? `feat!:` ou un footer `BREAKING CHANGE:`.
+
+Deux garde-fous :
 - Un changement logique par commit. Si ton message a besoin du mot « et », c'est probablement deux commits qui font semblant.
 - **Pas de `Co-Authored-By`.** (Oui, on le redit. C'est important.)
 
-**Pull requests**
+### Pull requests
+
 - Une PR se fait **relire** avant le merge. L'auto-merge en solo, c'est pour les gens qui aiment le rollback du dimanche.
 - La description dit : ce qui change, pourquoi, comment c'est testé, et le risque éventuel (migration ? downtime ? breaking change ?).
 - Une PR de 2000 lignes n'est pas relue, elle est bénie les yeux fermés. Vise petit.
@@ -166,7 +185,6 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 ## 6. Secrets & accès
 
 - **Passbolt est notre coffre.** Identifiants, clés d'API, accès serveurs : tout y vit. Jamais dans le code, jamais dans un README, jamais sur le chat. Git n'oublie rien, et c'est bien le problème.
-- Côté ERP, les secrets de prod (`db`, `smtp`, master password) sont injectés à l'init via l'entrypoint, depuis un dossier `secrets/` **non versionné**.
 - Le premier jour, demande à ton référent l'accès à l'org GitHub `QuantStudioAfrik` **et** à Passbolt.
 - Chaque service qui parle à un autre a un **compte dédié aux droits minimaux**. Pas de compte admin partagé « pour aller plus vite » : c'est comme ça qu'on va très vite dans le mur.
 
