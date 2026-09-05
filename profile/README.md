@@ -2,7 +2,7 @@
 
 Salut, et bienvenue. Si tu lis ça, c'est que tu viens d'être recruté·e, donc que quelqu'un ici t'a fait assez confiance pour te donner un siège sur notre GitHub. Félicitations, et merci d'embarquer. On est vraiment contents de t'avoir (et pas seulement parce qu'on avait besoin de bras).
 
-Ce dépôt existe pour une raison un peu égoïste : que **tu n'aies jamais à déranger quelqu'un sur le chat pour comprendre comment on fonctionne**. Où vivent les serveurs, comment s'y connecter, ce qu'on fabrique, qui a écrit quoi, et ce qu'on refusera gentiment en revue : tout est ici.
+Ce dépôt existe pour une raison un peu égoïste : que **tu n'aies jamais à déranger quelqu'un sur le chat pour comprendre comment on fonctionne**. Où vivent les serveurs, comment s'y connecter, qui a écrit quoi, et ce qu'on refusera gentiment en revue : tout est ici.
 
 Garde cet esprit vivant. Le jour où tu quittes l'équipe, la personne suivante doit pouvoir lire ce même README, sauter la cérémonie du « café d'intro avec le·la senior », et livrer du code dès sa première matinée. Si tu découvres un truc qui n'est pas documenté ici, la règle tient en trois mots : **documente-le avant de l'oublier**. Le toi du futur t'offrira une bière pour ça.
 
@@ -10,50 +10,25 @@ Lis à ton rythme, dans l'ordre que tu veux. La table des matières est juste en
 
 ---
 
-## 🚀 Ton premier jour, version courte
-
-Tu n'as que 15 minutes aujourd'hui ? Fais ces quatre choses, dans l'ordre. Le reste peut dormir jusqu'à demain.
-
-1. **Génère ta clé SSH** et envoie la **publique** à ton référent technique. Voir [section 2](#2-se-connecter-à-un-serveur).
-2. **Parcours la [section 4 (Principes d'équipe)](#4-principes-déquipe).** C'est court, et ça t'évitera de te faire renvoyer ta première PR.
-3. **Trouve ton projet** dans la [section 7](#7-projets--dépôts), clone son dépôt, et lis **son propre README**.
-4. **Essaie de le lancer en local.** Si ça refuse de démarrer, félicitations : tu as trouvé ta première tâche.
-
-> [!TIP]
-> Bloqué·e sur une de ces étapes ? Demande sur le chat de l'équipe. La seule vraie question bête, c'est celle sur laquelle tu restes assis·e trois jours en silence.
-
----
-
 ## 🗺️ Table des matières
 
 | # | Section | En un mot |
 |:-:|---|---|
-| 1 | [Ce qu'on fait](#1-ce-quon-fait) | Le pourquoi de tout ça |
-| 2 | [Se connecter à un serveur](#2-se-connecter-à-un-serveur) | Ta clé, tes accès |
-| 3 | [DNS & noms de domaine](#3-dns--noms-de-domaine) | Où pointent les flèches |
-| 4 | [Principes d'équipe](#4-principes-déquipe) | À faire / à éviter / recommandé |
+| 1 | [Se connecter à un serveur](#1-se-connecter-à-un-serveur) | Ta clé, tes accès |
+| 2 | [DNS & noms de domaine](#2-dns--noms-de-domaine) | Où pointent les flèches |
+| 3 | [La stack](#3-la-stack) | Ce avec quoi on code |
+| 4 | [Comment on bosse](#4-comment-on-bosse) | À faire / à éviter |
 | 5 | [Workflow Git](#5-workflow-git) | Branche, PR, merge, répète |
 | 6 | [Secrets & accès](#6-secrets--accès) | Le coffre, et pourquoi git n'en est pas un |
 | 7 | [Projets & dépôts](#7-projets--dépôts) | La carte du royaume |
 | 8 | [Qui est qui](#8-qui-est-qui) | À qui parler avant de paniquer |
 
----
-
-## 1. Ce qu'on fait
-
-Quant Studio SARL conçoit et édite des logiciels pour le marché africain, l'espace **OHADA** en priorité. Le groupe tient sur **trois pôles** :
-
-| Pôle | Ce qu'il fait | Nature |
-|---|---|---|
-| 🛠️ **Teklane** | Ingénierie logicielle : l'ERP, les outils métier, la veille automatisée, les sites | Produits & régie |
-| 📚 **Thesigenix** | SaaS d'accompagnement à la recherche académique (store de sujets, encadrement) | Produit SaaS |
-| 🎓 **Quanty Mind** | Formation pro : analyse de données, mathématiques, IA | Formation |
-
-Le vaisseau amiral, c'est la **Quant Studio Suite** : une suite d'apps Odoo 19 propriétaires (compta, paie, contrats, signature) taillée pour l'OHADA et le Bénin. Tout le reste gravite autour : veille d'appels d'offres, veille presse, sites vitrines, outils internes. Bref, on ne s'ennuie pas.
+> [!TIP]
+> Tu n'as que 15 minutes aujourd'hui ? Envoie ta clé SSH ([section 1](#1-se-connecter-à-un-serveur)), lis [comment on bosse](#4-comment-on-bosse), puis clone ton projet ([section 7](#7-projets--dépôts)) et essaie de le lancer en local. Le reste peut dormir jusqu'à demain.
 
 ---
 
-## 2. Se connecter à un serveur
+## 1. Se connecter à un serveur
 
 > [!IMPORTANT]
 > **En bref :** clé SSH uniquement. Pas de root, pas de mot de passe. Tu envoies ta clé **publique** au référent, jamais la privée.
@@ -87,66 +62,56 @@ Mets une vraie passphrase. Une clé sans passphrase, c'est une clé de maison sc
 ssh <ton-utilisateur>@<hostname>
 ```
 
-### Notre infrastructure
+### Nos serveurs
 
-<!--
-À COMPLÉTER par David / le référent infra. Renseigner les serveurs réels
-(hébergeur, plan, OS, rôle, services). Garder le même format d'une colonne
-à l'autre : la cohérence est la seule chose qui nous sépare du chaos.
--->
+On tourne sur **deux serveurs** : un chez **Hetzner**, un chez **Infomaniak**.
 
-| Élément | Serveur 1 | Serveur 2 |
+<!-- À COMPLÉTER : hostname, OS, rôle et services de chaque serveur. Garder le même format d'une colonne à l'autre. -->
+
+| Élément | Hetzner | Infomaniak |
 |---|---|---|
-| Hébergeur | _à préciser_ | _à préciser_ |
 | Hostname | _à préciser_ | _à préciser_ |
 | OS | _à préciser_ | _à préciser_ |
-| Rôle principal | _ex. apps de production_ | _ex. mail / staging / outils_ |
+| Rôle principal | _à préciser_ | _à préciser_ |
 | Services hébergés | _à préciser_ | _à préciser_ |
-
-> [!NOTE]
-> Tu provisionnes un troisième serveur ? Bienvenue au club, on grandit. Copie une colonne et remplis-la. N'invente **pas** un nouveau format : le futur toi qui relit ce tableau à 2h du matin te remerciera.
 
 ---
 
-## 3. DNS & noms de domaine
+## 2. DNS & noms de domaine
 
 > [!IMPORTANT]
-> **En bref :** on choisit consciemment `proxied` ou `DNS only`, et on pose le DNS **avant** la conf nginx. Certbot a besoin que le nom résolve déjà, il n'est pas devin.
+> **En bref :** on pose le DNS **avant** la conf nginx. Certbot a besoin que le nom résolve déjà, il n'est pas devin.
 
-<!-- À COMPLÉTER : registrar, fournisseur DNS, procédure d'ajout de sous-domaine. Voir le modèle NAYLDIS au besoin. -->
+<!-- À COMPLÉTER : registrar, fournisseur DNS, procédure d'ajout de sous-domaine. -->
 
 - **Registrar / DNS :** _à préciser_
 - **Reverse proxy / TLS :** Nginx + Certbot (Let's Encrypt) devant les conteneurs.
 
 Deux règles qui font gagner des heures :
 
-- **Mail** (`MX`, SPF, DKIM, DMARC) : jamais proxifié. Le proxy et le mail ne s'aiment pas.
+- **Mail** (`MX`, SPF, DKIM, DMARC) : réglages à part, jamais derrière un proxy HTTP.
 - **Tu supprimes un service ? Supprime son enregistrement DNS.** Un record fantôme qui pointe vers un serveur qu'on ne contrôle plus, c'est le tapis rouge d'une prise de contrôle de sous-domaine.
 
 ---
 
-## 4. Principes d'équipe
-
-Ces règles s'appliquent à chaque projet qu'on livre. Elles ne sont pas là pour décorer : ce sont elles qui rendent nos nuits calmes et nos week-ends sans astreinte surprise.
-
-### La stack qu'on utilise
+## 3. La stack
 
 On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». On choisit un petit jeu d'outils, et on devient bons dessus.
 
-| Couche | Ce qu'on utilise |
+| Catégorie | Ce qu'on utilise |
 |---|---|
-| ERP / métier | **Odoo 19** (Python) |
-| Web apps / fronts | **Next.js 16** (React, TypeScript) |
-| Services IA / scraping | **Python** (LLM via **Ollama**, Playwright / Cheerio / Puppeteer) |
-| Base de données | **PostgreSQL** (Odoo), **MongoDB** (Thesigenix) |
-| Conteneurs | **Docker** + **Docker Compose** |
-| Reverse proxy / TLS | **Nginx** + **Certbot** |
-| Signature électronique | **DocuSeal** (auto-hébergé) |
-| Secrets | **Passbolt** |
-| Paquets front | **pnpm** (jamais npm/npx, on y tient) |
+| **Langages** | Python · TypeScript |
+| **Frameworks & runtimes** | Odoo 19 · Next.js · Express · Node.js |
+| **Bases de données** | PostgreSQL · MongoDB |
+| **Conteneurs & proxy** | Docker Compose · Nginx · Certbot |
+| **Mail** | Postfix (SMTP signé DKIM) |
 
 > [!NOTE]
 > Envie d'ajouter un nouvel outil ? Ouvre une discussion d'abord. La barre n'est pas « est-ce que c'est cool » (tout est cool le vendredi soir), c'est « est-ce que ça vaut le deuxième outil qu'on devra patcher, monitorer et expliquer à chaque nouveau ».
+
+---
+
+## 4. Comment on bosse
 
 <table>
 <tr>
@@ -154,75 +119,54 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 
 ### ✅ À faire
 
-- **Toujours dockeriser.** Un `docker-compose.yml`, et l'hôte reste propre.
-- **Pas de code sans design approuvé.** Notre règle d'or. On cadre, on valide, *ensuite* on code.
-- **Écrire un README** par projet : stack, lancement local, déploiement. Si tu ne sais pas expliquer le démarrage en 10 lignes, c'est ça, le vrai bug.
-- **Gérer les secrets proprement** (Passbolt, env hors git). Jamais dans un commit. Jamais.
-- **Sauvegarder.** Dumps, configs, volumes : automatisés, hors serveur, et *testés* en restaurant de temps en temps. Une sauvegarde jamais restaurée est une hypothèse, pas une sauvegarde.
+- **Tout tourne en Docker Compose.** Un projet, un `docker-compose.yml`, et l'hôte reste propre.
+- **Les secrets vivent dans Passbolt** (ou un dossier `secrets/` injecté à l'init), jamais dans git.
+- **Front en `pnpm`.** Le lockfile fait foi.
+- **Modules Odoo sous le préfixe `qs_`**, avec l'en-tête de licence QSEL-1.0 en tête de fichier.
+- **Un README par projet** : stack, lancement local, déploiement. Si tu ne sais pas expliquer le démarrage en quelques lignes, c'est ça, le vrai bug.
 
 </td>
 <td width="50%" valign="top">
 
 ### ❌ À éviter
 
-- **Pousser sur `main` en direct.** Ouvre une PR. Même seul·e. Surtout seul·e.
-- **Livrer un secret dans git.** Si ça arrive : fais tourner le secret, *puis* nettoie l'historique. Dans cet ordre.
-- **Réinventer l'auth, la crypto ou la file d'attente.** Ce qui existe marche et a déjà été audité par plus malin que nous.
-- **Désactiver la vérif SSL « pour debugger ».** La minute où ça part en prod avec `verify=False`, ça y reste pour cinq ans.
-- **Ajouter une dépendance pour un one-liner.** Un jour, quelqu'un (probablement toi) patchera sa 17e vulnérabilité transitive.
+- **Pas de `Co-Authored-By` dans les commits.** Jamais. C'est notre historique, il reste sobre.
+- **Aucune référence externe** (autre éditeur, Enterprise, clean-room…) dans le code, les commentaires ou les messages git.
+- **Pas de secret dans git.** Si ça arrive : fais tourner le secret, *puis* nettoie l'historique. Dans cet ordre.
+- **Pas de `npm`/`npx` côté front.** On est en `pnpm`, on y tient.
+- **Pas de code sans design approuvé.** On cadre, on valide, *ensuite* on code.
 
 </td>
 </tr>
 </table>
-
-### 💡 Recommandé (fortes suggestions, pas des lois)
-
-- **Lis la doc de l'outil avant de demander.** Puis demande, avec plaisir. On répond volontiers à tout, sauf à la question qui est littéralement le premier paragraphe du README.
-- **Les PR les plus petites possibles.** Une PR de 2000 lignes n'est pas relue, elle est bénie les yeux fermés.
-- **Commente le _pourquoi_, pas le _quoi_.** Un bon nommage explique déjà le quoi.
-- **Sois sympa en revue.** On critique le code, pas la personne. Et on attend la même énergie quand c'est ton tour de recevoir les remarques.
-
-### 🧰 Notre outillage : super-dev
-
-Le dev suit le framework interne **super-dev** (plugin Claude Code) :
-
-| Étape | Commande | Quand |
-|---|---|---|
-| Dérouler une feature de bout en bout | `/build` | Toute nouvelle fonctionnalité |
-| Vérifier avant commit | `/verify` | Avant chaque commit |
-| Passe d'authenticité (style) | `/ghostwrite` | Avant de livrer |
-| Revue de sécurité | `/security` | Sur toute surface sensible |
-| Idée hors-scope | `/backlog` | Ce qui déborde du périmètre |
-
-Côté licences : le code produit est sous **QSEL-1.0** (Quant Studio Edition License), sauf mention contraire dans le `LICENSE` du dépôt.
 
 ---
 
 ## 5. Workflow Git
 
 > [!IMPORTANT]
-> **En bref :** branche depuis `main`, ouvre une PR, attends une revue et une CI verte, squash au merge. C'est tout. Vraiment.
+> **En bref :** on branche, on ouvre une PR, on fait relire, on merge propre. On ne pousse pas en direct sur la branche déployable.
 
 **Branches**
-- `main` est toujours déployable. La prod suit `main` (ou un tag coupé dessus).
-- Fonctionnalités : `feat/<description-courte-kebab>`
-- Correctifs : `fix/<description-courte-kebab>`
+- Une branche par sujet : `feat/<description-courte-kebab>` pour une fonctionnalité, `fix/<description-courte-kebab>` pour un correctif.
+- La branche déployable reste toujours dans un état livrable.
 
 **Commits**
 - Mode impératif : « Ajoute l'endpoint de matching », pas « Ajouté », pas « des trucs ».
 - Un changement logique par commit. Si ton message a besoin du mot « et », c'est probablement deux commits qui font semblant.
+- **Pas de `Co-Authored-By`.** (Oui, on le redit. C'est important.)
 
 **Pull requests**
-- **Au moins une revue approuvée** avant le merge. L'auto-merge, c'est pour les gens qui aiment le risque et le rollback.
-- **CI verte, sans exception.** Pas de « je corrige après le merge » (spoiler : personne ne corrige après le merge).
-- **La description dit :** ce qui change, pourquoi, comment c'est testé, et le risque éventuel (migration ? downtime ? breaking change ?).
-- **Supprime la branche** après le merge. Son travail est dans `main`, laisse-la partir en paix.
+- Une PR se fait **relire** avant le merge. L'auto-merge en solo, c'est pour les gens qui aiment le rollback du dimanche.
+- La description dit : ce qui change, pourquoi, comment c'est testé, et le risque éventuel (migration ? downtime ? breaking change ?).
+- Une PR de 2000 lignes n'est pas relue, elle est bénie les yeux fermés. Vise petit.
 
 ---
 
 ## 6. Secrets & accès
 
 - **Passbolt est notre coffre.** Identifiants, clés d'API, accès serveurs : tout y vit. Jamais dans le code, jamais dans un README, jamais sur le chat. Git n'oublie rien, et c'est bien le problème.
+- Côté ERP, les secrets de prod (`db`, `smtp`, master password) sont injectés à l'init via l'entrypoint, depuis un dossier `secrets/` **non versionné**.
 - Le premier jour, demande à ton référent l'accès à l'org GitHub `QuantStudioAfrik` **et** à Passbolt.
 - Chaque service qui parle à un autre a un **compte dédié aux droits minimaux**. Pas de compte admin partagé « pour aller plus vite » : c'est comme ça qu'on va très vite dans le mur.
 
@@ -245,7 +189,7 @@ La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'
 Suite d'apps Odoo 19 propriétaires : compta, paie, contrats (CLM), courrier, signature. Localisations OHADA (17 pays) + Bénin (CNSS / IPRES / IRPP, DGI).
 
 **Dépôt :** [`QuantStudioAfrik/erp`](https://github.com/QuantStudioAfrik/erp)
-**Stack :** Odoo 19 · Python · PostgreSQL · Docker
+**Techno :** Odoo 19 · Python · PostgreSQL · Docker Compose · Postfix
 **Lancement :** `docker compose up -d` puis le backoffice sur `http://localhost:8082`
 
 </details>
@@ -255,10 +199,10 @@ Suite d'apps Odoo 19 propriétaires : compta, paie, contrats (CLM), courrier, si
 
 <br>
 
-Ratisse les portails de marchés publics, juge chaque AO via un LLM (Ollama), et ne garde que les projets d'ingénierie logicielle qu'il pousse dans Odoo (`crm.ao`).
+Ratisse les portails de marchés publics, juge chaque AO via un LLM local (Ollama), et ne garde que les projets d'ingénierie logicielle qu'il pousse dans Odoo (`crm.ao`).
 
 **Dépôt :** [`QuantStudioAfrik/scanner`](https://github.com/QuantStudioAfrik/scanner)
-**Stack :** Python · Ollama · Odoo
+**Techno :** Python · Ollama · Odoo
 
 </details>
 
@@ -270,7 +214,7 @@ Ratisse les portails de marchés publics, juge chaque AO via un LLM (Ollama), et
 Scraping multi-moteurs, suivi de mots-clés, alertes, dashboard + API REST, exports CSV/XLSX.
 
 **Dépôt :** [`QuantStudioAfrik/scrapping-article`](https://github.com/QuantStudioAfrik/scrapping-article)
-**Stack :** Node.js · REST
+**Techno :** Node.js · API REST
 
 </details>
 
@@ -282,20 +226,20 @@ Scraping multi-moteurs, suivi de mots-clés, alertes, dashboard + API REST, expo
 Le site vitrine de Quant Studio.
 
 **Dépôt :** [`QuantStudioAfrik/vitrine-quant-studio`](https://github.com/QuantStudioAfrik/vitrine-quant-studio)
-**Stack :** Next.js 16 · Tailwind v4 · pnpm
+**Techno :** Next.js · Tailwind · pnpm
 **Lancement :** `pnpm install && pnpm dev`
 
 </details>
 
 <details>
-<summary><b>OpenDesign</b> · l'alternative open-source à Claude Design</summary>
+<summary><b>OpenDesign</b> · l'outil de design open-source</summary>
 
 <br>
 
 Agent de design + génération d'images.
 
 **Dépôt :** [`QuantStudioAfrik/open-design`](https://github.com/QuantStudioAfrik/open-design) _(slug à confirmer)_
-**Stack :** Node · app desktop
+**Techno :** Node · app desktop
 
 </details>
 
@@ -307,7 +251,7 @@ Agent de design + génération d'images.
 Système open-source de production vidéo (pipeline `backlot`).
 
 **Dépôt :** [`QuantStudioAfrik/OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) _(slug à confirmer)_
-**Stack :** Python
+**Techno :** Python
 
 </details>
 
@@ -321,7 +265,7 @@ Système open-source de production vidéo (pipeline `backlot`).
 Accompagne étudiants et chercheurs : store de sujets structurés (problématique, revue de littérature, méthodologie), encadrement, gestion multi-rôles (7 rôles).
 
 **Dépôt :** [`QuantStudioAfrik/thesigenix`](https://github.com/QuantStudioAfrik/thesigenix)
-**Stack :** Next.js 16 · TypeScript · MongoDB · Docker
+**Techno :** Next.js · Express · TypeScript · MongoDB · Docker
 **Lancement :** `pnpm install && pnpm dev`
 
 </details>
