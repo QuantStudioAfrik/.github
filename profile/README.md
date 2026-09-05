@@ -21,7 +21,7 @@ Lis à ton rythme, dans l'ordre que tu veux. La table des matières est juste en
 | 5 | [Workflow Git](#5-workflow-git) | Branche, PR, merge, répète |
 | 6 | [Secrets & accès](#6-secrets--accès) | Le coffre, et pourquoi git n'en est pas un |
 | 7 | [Projets & dépôts](#7-projets--dépôts) | La carte du royaume |
-| 8 | [Qui est qui](#8-qui-est-qui) | À qui parler avant de paniquer |
+| 8 | [Qui fait quoi](#8-qui-fait-quoi) | Rôles & matrice DACI |
 
 > [!TIP]
 > Tu n'as que 15 minutes aujourd'hui ? Lis [comment on bosse](#4-comment-on-bosse), clone ton projet ([section 7](#7-projets--dépôts)) et essaie de le lancer en local. Et si tes attributions te donnent accès au serveur, envoie ta clé SSH ([section 1](#1-se-connecter-à-un-serveur)). Le reste peut dormir jusqu'à demain.
@@ -31,7 +31,7 @@ Lis à ton rythme, dans l'ordre que tu veux. La table des matières est juste en
 ## 1. Se connecter à un serveur
 
 > [!CAUTION]
-> **L'accès serveur n'est pas automatique.** Tu y as droit uniquement si tes attributions te donnent accès au serveur, après validation du Tech Lead ou de la direction. Sinon, tu n'auras pas d'accès : ce n'est pas un oubli, c'est le principe du moindre privilège. La suite de cette section ne te concerne que si un accès t'a été accordé.
+> **L'accès serveur n'est pas automatique.** Tu y as droit uniquement si tes attributions le justifient. Les accès serveur (comme les mails pro et les comptes) sont **créés par la direction**. Sinon, pas d'accès : ce n'est pas un oubli, c'est le principe du moindre privilège. La suite de cette section ne te concerne que si un accès t'a été accordé.
 
 > [!IMPORTANT]
 > **En bref :** clé SSH uniquement. Pas de root, pas de mot de passe. Tu envoies ta clé **publique** au référent, jamais la privée.
@@ -176,7 +176,7 @@ Garde-fou : un changement logique par commit. Si ton message a besoin du mot « 
 
 ### Pull requests
 
-- Une PR se fait **relire** avant le merge. L'auto-merge en solo, c'est pour les gens qui aiment le rollback du dimanche.
+- **Toute PR est relue avant le merge.** Balbine assure les reviews intermédiaires ; une PR vers `main` passe en plus par la validation de la direction.
 - La description dit : ce qui change, pourquoi, comment c'est testé, et le risque éventuel (migration ? downtime ? breaking change ?).
 - Une PR de 2000 lignes n'est pas relue, elle est bénie les yeux fermés. Vise petit.
 
@@ -206,16 +206,18 @@ La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'
 
 ---
 
-## 8. Qui est qui
+## 8. Qui fait quoi
+
+Équipe réduite, rôles clairs.
 
 <table>
 <tr>
 <td align="center" width="33%">
 
 ### David Akpovi
-`Fondateur`
+`Fondateur · Direction`
 
-Direction · vision produit
+Accès serveurs & comptes · validation des PR vers `main`
 
 </td>
 <td align="center" width="33%">
@@ -223,13 +225,13 @@ Direction · vision produit
 ### Balbine MAMADOU
 `Tech Lead`
 
-Architecture · revue technique
+Code · reviews · accès aux repos & teams
 
 </td>
 <td align="center" width="33%">
 
 ### Marthely
-`Développeur`
+`Stagiaire`
 
 Développement produit
 
@@ -237,15 +239,19 @@ Développement produit
 </tr>
 </table>
 
-**Qui contacter avant de paniquer**
+### La matrice DACI
 
-| Ton problème | Ta personne |
-|---|---|
-| Question technique, archi, revue | **Balbine MAMADOU** (Tech Lead) |
-| Développement produit au quotidien | **Marthely** |
-| Direction, vision, priorités | **David Akpovi** |
+Qui **pilote** (D), qui **valide** (A), qui **contribue** (C), qui est **informé** (I) pour chaque type de tâche.
 
-<!-- À COMPLÉTER : autres membres, référents par dépôt, contacts (email/chat). -->
+| Tâche | D | A | C | I |
+|---|---|---|---|---|
+| Accès serveur, mails pro, comptes | David | David | (aucun) | Balbine |
+| Accès aux repos & teams (selon le scope) | Balbine | Balbine | (aucun) | David |
+| Reviews de code intermédiaires | Balbine | Balbine | Auteur de la PR | (aucun) |
+| PR vers `main` (validation finale + merge) | Balbine | David | Auteur de la PR | (aucun) |
+| Développement produit | Balbine, Marthely | Balbine | (aucun) | David |
+
+<!-- À COMPLÉTER : nouveaux membres, référents par dépôt, contacts. Étoffer la DACI quand l'équipe grandit. -->
 
 ---
 
