@@ -2,7 +2,7 @@
 
 Salut, et bienvenue. Si tu lis ça, c'est que tu viens d'être recruté·e, donc que quelqu'un ici t'a fait assez confiance pour te donner un siège sur notre GitHub. Félicitations, et merci d'embarquer. On est vraiment contents de t'avoir (et pas seulement parce qu'on avait besoin de bras).
 
-Ce dépôt existe pour une raison un peu égoïste : que **tu n'aies jamais à déranger quelqu'un sur le chat pour comprendre comment on fonctionne**. Où vivent les serveurs, comment s'y connecter, qui a écrit quoi, et ce qu'on refusera gentiment en revue : tout est ici.
+Ce dépôt existe pour une raison un peu égoïste : que **tu n'aies jamais à déranger quelqu'un sur le chat pour comprendre comment on fonctionne**. Où vivent les serveurs, comment s'y connecter, qui fait quoi, et ce qu'on refusera gentiment en revue : tout est ici.
 
 Garde cet esprit vivant. Le jour où tu quittes l'équipe, la personne suivante doit pouvoir lire ce même README, sauter la cérémonie du « café d'intro avec le·la senior », et livrer du code dès sa première matinée. Si tu découvres un truc qui n'est pas documenté ici, la règle tient en trois mots : **documente-le avant de l'oublier**. Le toi du futur t'offrira une bière pour ça.
 
@@ -152,8 +152,8 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 
 | Branche | Ça sert à quoi | On branche depuis | Ça fusionne dans |
 |---|---|---|---|
-| `main` | La prod, uniquement des versions taguées | (racine) | (rien) |
-| `develop` | L'intégration, là où tout se rejoint | `main` | (via release) |
+| `main` | La prod, uniquement des versions taguées | (base du projet) | reçoit `release` & `hotfix` |
+| `develop` | L'intégration, là où tout se rejoint | `main` | atteint `main` via `release` |
 | `feature/*` | Une fonctionnalité | `develop` | `develop` |
 | `release/*` | Préparer une version | `develop` | `main` **et** `develop` |
 | `hotfix/*` | Éteindre un feu en prod | `main` | `main` **et** `develop` |
@@ -192,7 +192,7 @@ Garde-fou : un changement logique par commit. Si ton message a besoin du mot « 
 
 ## 7. Projets & dépôts
 
-La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'est là que tu trouves le setup, le déploiement, les variables d'env et les pièges. Ici, c'est juste l'index, pour savoir ce qui existe et qui pinguer.
+La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'est là que tu trouves le setup, le déploiement, les variables d'env et les pièges. Ici, c'est juste l'index, pour savoir ce qui existe et où aller voir.
 
 | Projet | Ce que ça fait | Techno | Dépôt |
 |---|---|---|:--|
