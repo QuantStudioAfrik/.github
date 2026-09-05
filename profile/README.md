@@ -201,11 +201,8 @@ La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'
 | 🤖 **DAO Scanner** | Veille d'appels d'offres : filtre les AO par LLM local et les pousse dans Odoo. | `Python` `Ollama` `Odoo` | [`scanner`](https://github.com/QuantStudioAfrik/scanner) |
 | 📰 **Scrapping-Article** | Veille presse : scraping multi-moteurs, alertes, dashboard + API REST. | `Node.js` `REST` | [`scrapping-article`](https://github.com/QuantStudioAfrik/scrapping-article) |
 | 🖥️ **Vitrine Quant Studio** | Le site vitrine du groupe. | `Next.js` `Tailwind` `pnpm` | [`vitrine-quant-studio`](https://github.com/QuantStudioAfrik/vitrine-quant-studio) |
-| 🎨 **OpenDesign** | Outil de design open-source : agent + génération d'images. | `Node` `desktop` | [`open-design`](https://github.com/QuantStudioAfrik/open-design) ⚠️ |
-| 🎬 **OpenMontage** | Production vidéo agentique (pipeline `backlot`). | `Python` | [`OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) ⚠️ |
-
-> [!NOTE]
-> ⚠️ = slug du dépôt à confirmer. Les **contributeurs** de chaque projet se lisent dans son `git log` : ni une hiérarchie, ni une liste figée. Un nom manquant ou faux ? Ouvre une PR.
+| 🎨 **OpenDesign** | Outil de design open-source : agent + génération d'images. | `Node` `desktop` | [`open-design`](https://github.com/QuantStudioAfrik/open-design) |
+| 🎬 **OpenMontage** | Production vidéo agentique (pipeline `backlot`). | `Python` | [`OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) |
 
 ---
 
