@@ -197,35 +197,15 @@ Deux garde-fous :
 
 La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'est là que tu trouves le setup, le déploiement, les variables d'env et les pièges. Ici, c'est juste l'index, pour savoir ce qui existe et qui pinguer.
 
-### 🛠️ Teklane · ingénierie logicielle
-
 | Projet | Ce que ça fait | Techno | Dépôt |
 |---|---|---|:--|
 | 🚩 **Quant Studio Suite** | L'ERP maison : compta, paie, contrats, courrier, signature. Localisations OHADA + Bénin. | `Odoo 19` `Python` `PostgreSQL` `Docker` | [`erp`](https://github.com/QuantStudioAfrik/erp) |
+| 📚 **Thesigenix** | Accompagnement mémoires/thèses : store de sujets, encadrement, multi-rôles (7 rôles). | `Next.js` `Express` `TypeScript` `MongoDB` | [`thesigenix`](https://github.com/QuantStudioAfrik/thesigenix) |
 | 🤖 **DAO Scanner** | Veille d'appels d'offres : filtre les AO par LLM local et les pousse dans Odoo. | `Python` `Ollama` `Odoo` | [`scanner`](https://github.com/QuantStudioAfrik/scanner) |
 | 📰 **Scrapping-Article** | Veille presse : scraping multi-moteurs, alertes, dashboard + API REST. | `Node.js` `REST` | [`scrapping-article`](https://github.com/QuantStudioAfrik/scrapping-article) |
 | 🖥️ **Vitrine Quant Studio** | Le site vitrine du groupe. | `Next.js` `Tailwind` `pnpm` | [`vitrine-quant-studio`](https://github.com/QuantStudioAfrik/vitrine-quant-studio) |
 | 🎨 **OpenDesign** | Outil de design open-source : agent + génération d'images. | `Node` `desktop` | [`open-design`](https://github.com/QuantStudioAfrik/open-design) ⚠️ |
 | 🎬 **OpenMontage** | Production vidéo agentique (pipeline `backlot`). | `Python` | [`OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) ⚠️ |
-
-### 📚 Thesigenix · SaaS académique
-
-| Projet | Ce que ça fait | Techno | Dépôt |
-|---|---|---|:--|
-| 📚 **Thesigenix** | Accompagnement mémoires/thèses : store de sujets, encadrement, multi-rôles (7 rôles). | `Next.js` `Express` `TypeScript` `MongoDB` | [`thesigenix`](https://github.com/QuantStudioAfrik/thesigenix) |
-
-### 🧩 Infra & outils déployés
-
-On ne les écrit pas, on les déploie et on les configure.
-
-| Outil | Ce que ça fait | Dépôt |
-|---|---|:--|
-| ✍️ **DocuSeal** | Signature électronique, branchée au module Signature de la Suite. | [`docuseal`](https://github.com/QuantStudioAfrik/docuseal) ⚠️ · [upstream](https://github.com/docusealco/docuseal) |
-
-### 🎓 Quanty Mind
-
-<!-- Aucun dépôt de code à ce jour ; supports de formation hors GitHub. Ajouter ici les dépôts éventuels (notebooks, générateurs d'exercices). -->
-_Pas encore de dépôt de code : les supports de formation vivent hors GitHub. La place est réservée, elle attend son premier commit._
 
 > [!NOTE]
 > ⚠️ = slug du dépôt à confirmer. Les **contributeurs** de chaque projet se lisent dans son `git log` : ni une hiérarchie, ni une liste figée. Un nom manquant ou faux ? Ouvre une PR.
