@@ -123,7 +123,7 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 - **Les secrets vivent dans Passbolt**, jamais dans git.
 - **Front en `pnpm`.** Le lockfile fait foi.
 - **Un README par projet** : stack, lancement local, déploiement. Si tu ne sais pas expliquer le démarrage en quelques lignes, c'est ça, le vrai bug.
-- **Les règles propres à un projet vivent dans son repo** (son `README`, son `CLAUDE.md`). Ici, on ne garde que le général.
+- **Les règles propres à un projet vivent dans son repo** (dans son `README`). Ici, on ne garde que le général.
 
 </td>
 <td width="50%" valign="top">
@@ -150,8 +150,8 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 
 | Branche | Ça sert à quoi | On branche depuis | Ça fusionne dans |
 |---|---|---|---|
-| `main` | La prod, uniquement des versions taguées | — | — |
-| `develop` | L'intégration, là où tout se rejoint | `main` | — |
+| `main` | La prod, uniquement des versions taguées | (racine) | (rien) |
+| `develop` | L'intégration, là où tout se rejoint | `main` | (via release) |
 | `feature/*` | Une fonctionnalité | `develop` | `develop` |
 | `release/*` | Préparer une version | `develop` | `main` **et** `develop` |
 | `hotfix/*` | Éteindre un feu en prod | `main` | `main` **et** `develop` |
