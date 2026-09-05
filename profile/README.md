@@ -176,7 +176,7 @@ Garde-fou : un changement logique par commit. Si ton message a besoin du mot « 
 
 ### Pull requests
 
-- **Toute PR est relue avant le merge.** Balbine assure les reviews intermédiaires ; une PR vers `main` passe en plus par la validation de la direction.
+- **Toute PR est relue avant le merge.** La review du code est faite par la direction. Le merge vers `develop` est validé par le Tech Lead, celui vers `main` par la direction.
 - La description dit : ce qui change, pourquoi, comment c'est testé, et le risque éventuel (migration ? downtime ? breaking change ?).
 - Une PR de 2000 lignes n'est pas relue, elle est bénie les yeux fermés. Vise petit.
 
@@ -217,7 +217,7 @@ La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'
 ### David Akpovi
 `Fondateur · Direction`
 
-Accès serveurs & comptes · validation des PR vers `main`
+Accès serveurs, comptes & DNS · review du code · merge des PR vers `main`
 
 </td>
 <td align="center" width="33%">
@@ -225,7 +225,7 @@ Accès serveurs & comptes · validation des PR vers `main`
 ### Balbine MAMADOU
 `Tech Lead`
 
-Code · reviews · accès aux repos & teams
+Code · merge des PR vers `develop` · accès aux repos & teams
 
 </td>
 <td align="center" width="33%">
@@ -241,15 +241,17 @@ Développement produit
 
 ### La matrice DACI
 
-Qui **pilote** (D), qui **valide** (A), qui **contribue** (C), qui est **informé** (I) pour chaque type de tâche.
+Qui **pilote** (D), qui **review** le code, qui **valide** (A), qui **contribue** (C), qui est **informé** (I) pour chaque type de tâche.
 
-| Tâche | D | A | C | I |
-|---|---|---|---|---|
-| Accès serveur, mails pro, comptes | David | David | (aucun) | Balbine |
-| Accès aux repos & teams (selon le scope) | Balbine | Balbine | (aucun) | David |
-| Reviews de code intermédiaires | Balbine | Balbine | Auteur de la PR | (aucun) |
-| PR vers `main` (validation finale + merge) | Balbine | David | Auteur de la PR | (aucun) |
-| Développement produit | Balbine, Marthely | Balbine | (aucun) | David |
+| Tâche | Pilote · D | Review | Validation · A | Contrib. · C | Informé · I |
+|---|---|---|---|---|---|
+| Accès serveur, mails pro, comptes | David | (n/a) | David | (aucun) | Balbine |
+| Gestion DNS | David | (n/a) | David | (aucun) | Balbine |
+| Déploiement | Balbine | (n/a) | David | (aucun) | David |
+| Accès aux repos & teams (selon le scope) | Balbine | (n/a) | Balbine | (aucun) | David |
+| Développement produit | Balbine, Marthely | (n/a) | Balbine | équipe | David |
+| PR vers `develop` | Auteur | David | Balbine | Auteur | (aucun) |
+| PR vers `main` | Auteur | David | David | Auteur | (aucun) |
 
 <!-- À COMPLÉTER : nouveaux membres, référents par dépôt, contacts. Étoffer la DACI quand l'équipe grandit. -->
 
