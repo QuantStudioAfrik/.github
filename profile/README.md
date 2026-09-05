@@ -247,7 +247,7 @@ Qui **pilote** (D), qui **review** le code, qui **valide** (A), qui **contribue*
 |---|---|---|---|---|---|
 | Accès serveur, mails pro, comptes | David | (n/a) | David | (aucun) | Balbine |
 | Gestion DNS | David | (n/a) | David | (aucun) | Balbine |
-| Déploiement | Balbine | (n/a) | David | (aucun) | David |
+| Déploiement | Balbine | (n/a) | Balbine | (aucun) | David |
 | Accès aux repos & teams (selon le scope) | Balbine | (n/a) | Balbine | (aucun) | David |
 | Développement produit | Balbine, Marthely | (n/a) | Balbine | équipe | David |
 | PR vers `develop` | Auteur | David | Balbine | Auteur | (aucun) |
