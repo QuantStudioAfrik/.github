@@ -24,11 +24,14 @@ Lis à ton rythme, dans l'ordre que tu veux. La table des matières est juste en
 | 8 | [Qui est qui](#8-qui-est-qui) | À qui parler avant de paniquer |
 
 > [!TIP]
-> Tu n'as que 15 minutes aujourd'hui ? Envoie ta clé SSH ([section 1](#1-se-connecter-à-un-serveur)), lis [comment on bosse](#4-comment-on-bosse), puis clone ton projet ([section 7](#7-projets--dépôts)) et essaie de le lancer en local. Le reste peut dormir jusqu'à demain.
+> Tu n'as que 15 minutes aujourd'hui ? Lis [comment on bosse](#4-comment-on-bosse), clone ton projet ([section 7](#7-projets--dépôts)) et essaie de le lancer en local. Et si ton rôle demande un accès serveur, envoie ta clé SSH ([section 1](#1-se-connecter-à-un-serveur)). Le reste peut dormir jusqu'à demain.
 
 ---
 
 ## 1. Se connecter à un serveur
+
+> [!CAUTION]
+> **L'accès serveur n'est pas automatique.** Tout le monde n'y a pas droit, et c'est voulu. Il est accordé **au cas par cas**, uniquement si ton rôle le nécessite (déploiement, ops, prod), et **après validation du Tech Lead ou de la direction**. Si ton travail ne touche pas aux serveurs, tu n'auras pas d'accès : ce n'est pas un oubli, c'est le principe du moindre privilège. La suite de cette section ne te concerne que si un accès t'a été accordé.
 
 > [!IMPORTANT]
 > **En bref :** clé SSH uniquement. Pas de root, pas de mot de passe. Tu envoies ta clé **publique** au référent, jamais la privée.
