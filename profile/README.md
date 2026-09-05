@@ -185,7 +185,7 @@ Garde-fou : un changement logique par commit. Si ton message a besoin du mot « 
 ## 6. Secrets & accès
 
 - **Passbolt est notre coffre.** Identifiants, clés d'API, accès serveurs : tout y vit. Jamais dans le code, jamais dans un README, jamais sur le chat. Git n'oublie rien, et c'est bien le problème.
-- Le premier jour, demande à ton référent l'accès à l'org GitHub `QuantStudioAfrik` **et** à Passbolt.
+- Le premier jour, demande à ton référent ton accès à Passbolt.
 - Chaque service qui parle à un autre a un **compte dédié aux droits minimaux**. Pas de compte admin partagé « pour aller plus vite » : c'est comme ça qu'on va très vite dans le mur.
 
 ---
