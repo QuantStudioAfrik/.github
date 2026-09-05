@@ -197,119 +197,38 @@ Deux garde-fous :
 
 La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'est là que tu trouves le setup, le déploiement, les variables d'env et les pièges. Ici, c'est juste l'index, pour savoir ce qui existe et qui pinguer.
 
-> [!NOTE]
-> Les **contributeurs** sortent du `git log` de chaque dépôt. Ni une hiérarchie, ni une liste exhaustive. Un nom manquant ou faux ? Ouvre une PR : c'est tout l'intérêt du truc.
-
 ### 🛠️ Teklane · ingénierie logicielle
 
-<details open>
-<summary><b>Quant Studio Suite (ERP)</b> · le vaisseau amiral 🚩</summary>
-
-<br>
-
-Suite d'apps Odoo 19 propriétaires : compta, paie, contrats (CLM), courrier, signature. Localisations OHADA (17 pays) + Bénin (CNSS / IPRES / IRPP, DGI).
-
-**Dépôt :** [`QuantStudioAfrik/erp`](https://github.com/QuantStudioAfrik/erp)
-**Techno :** Odoo 19 · Python · PostgreSQL · Docker Compose · Postfix
-**Lancement :** `docker compose up -d` puis le backoffice sur `http://localhost:8082`
-
-</details>
-
-<details>
-<summary><b>DAO Scanner</b> · le robot qui lit les appels d'offres à ta place</summary>
-
-<br>
-
-Ratisse les portails de marchés publics, juge chaque AO via un LLM local (Ollama), et ne garde que les projets d'ingénierie logicielle qu'il pousse dans Odoo (`crm.ao`).
-
-**Dépôt :** [`QuantStudioAfrik/scanner`](https://github.com/QuantStudioAfrik/scanner)
-**Techno :** Python · Ollama · Odoo
-
-</details>
-
-<details>
-<summary><b>Scrapping-Article</b> · la veille presse full-stack</summary>
-
-<br>
-
-Scraping multi-moteurs, suivi de mots-clés, alertes, dashboard + API REST, exports CSV/XLSX.
-
-**Dépôt :** [`QuantStudioAfrik/scrapping-article`](https://github.com/QuantStudioAfrik/scrapping-article)
-**Techno :** Node.js · API REST
-
-</details>
-
-<details>
-<summary><b>Vitrine Quant Studio</b> · la façade du groupe</summary>
-
-<br>
-
-Le site vitrine de Quant Studio.
-
-**Dépôt :** [`QuantStudioAfrik/vitrine-quant-studio`](https://github.com/QuantStudioAfrik/vitrine-quant-studio)
-**Techno :** Next.js · Tailwind · pnpm
-**Lancement :** `pnpm install && pnpm dev`
-
-</details>
-
-<details>
-<summary><b>OpenDesign</b> · l'outil de design open-source</summary>
-
-<br>
-
-Agent de design + génération d'images.
-
-**Dépôt :** [`QuantStudioAfrik/open-design`](https://github.com/QuantStudioAfrik/open-design) _(slug à confirmer)_
-**Techno :** Node · app desktop
-
-</details>
-
-<details>
-<summary><b>OpenMontage</b> · la production vidéo agentique</summary>
-
-<br>
-
-Système open-source de production vidéo (pipeline `backlot`).
-
-**Dépôt :** [`QuantStudioAfrik/OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) _(slug à confirmer)_
-**Techno :** Python
-
-</details>
+| Projet | Ce que ça fait | Techno | Dépôt |
+|---|---|---|:--|
+| 🚩 **Quant Studio Suite** | L'ERP maison : compta, paie, contrats, courrier, signature. Localisations OHADA + Bénin. | `Odoo 19` `Python` `PostgreSQL` `Docker` | [`erp`](https://github.com/QuantStudioAfrik/erp) |
+| 🤖 **DAO Scanner** | Veille d'appels d'offres : filtre les AO par LLM local et les pousse dans Odoo. | `Python` `Ollama` `Odoo` | [`scanner`](https://github.com/QuantStudioAfrik/scanner) |
+| 📰 **Scrapping-Article** | Veille presse : scraping multi-moteurs, alertes, dashboard + API REST. | `Node.js` `REST` | [`scrapping-article`](https://github.com/QuantStudioAfrik/scrapping-article) |
+| 🖥️ **Vitrine Quant Studio** | Le site vitrine du groupe. | `Next.js` `Tailwind` `pnpm` | [`vitrine-quant-studio`](https://github.com/QuantStudioAfrik/vitrine-quant-studio) |
+| 🎨 **OpenDesign** | Outil de design open-source : agent + génération d'images. | `Node` `desktop` | [`open-design`](https://github.com/QuantStudioAfrik/open-design) ⚠️ |
+| 🎬 **OpenMontage** | Production vidéo agentique (pipeline `backlot`). | `Python` | [`OpenMontage`](https://github.com/QuantStudioAfrik/OpenMontage) ⚠️ |
 
 ### 📚 Thesigenix · SaaS académique
 
-<details>
-<summary><b>Thesigenix</b> · le copilote des mémoires et des thèses</summary>
-
-<br>
-
-Accompagne étudiants et chercheurs : store de sujets structurés (problématique, revue de littérature, méthodologie), encadrement, gestion multi-rôles (7 rôles).
-
-**Dépôt :** [`QuantStudioAfrik/thesigenix`](https://github.com/QuantStudioAfrik/thesigenix)
-**Techno :** Next.js · Express · TypeScript · MongoDB · Docker
-**Lancement :** `pnpm install && pnpm dev`
-
-</details>
+| Projet | Ce que ça fait | Techno | Dépôt |
+|---|---|---|:--|
+| 📚 **Thesigenix** | Accompagnement mémoires/thèses : store de sujets, encadrement, multi-rôles (7 rôles). | `Next.js` `Express` `TypeScript` `MongoDB` | [`thesigenix`](https://github.com/QuantStudioAfrik/thesigenix) |
 
 ### 🧩 Infra & outils déployés
 
-Outils open-source tiers qu'on exploite en prod. On ne les écrit pas, on les déploie et on les configure.
+On ne les écrit pas, on les déploie et on les configure.
 
-<details>
-<summary><b>DocuSeal</b> · signature électronique (alternative DocuSign)</summary>
-
-<br>
-
-Branché au module Signature de la Suite.
-
-**Dépôt :** [`QuantStudioAfrik/docuseal`](https://github.com/QuantStudioAfrik/docuseal) _(slug à confirmer)_ · upstream [`docusealco/docuseal`](https://github.com/docusealco/docuseal)
-
-</details>
+| Outil | Ce que ça fait | Dépôt |
+|---|---|:--|
+| ✍️ **DocuSeal** | Signature électronique, branchée au module Signature de la Suite. | [`docuseal`](https://github.com/QuantStudioAfrik/docuseal) ⚠️ · [upstream](https://github.com/docusealco/docuseal) |
 
 ### 🎓 Quanty Mind
 
 <!-- Aucun dépôt de code à ce jour ; supports de formation hors GitHub. Ajouter ici les dépôts éventuels (notebooks, générateurs d'exercices). -->
-_Supports de formation gérés hors GitHub pour l'instant. La place est réservée, elle attend son premier commit._
+_Pas encore de dépôt de code : les supports de formation vivent hors GitHub. La place est réservée, elle attend son premier commit._
+
+> [!NOTE]
+> ⚠️ = slug du dépôt à confirmer. Les **contributeurs** de chaque projet se lisent dans son `git log` : ni une hiérarchie, ni une liste figée. Un nom manquant ou faux ? Ouvre une PR.
 
 ---
 
