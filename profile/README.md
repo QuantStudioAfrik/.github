@@ -208,8 +208,6 @@ La carte du royaume. **Chaque projet a son propre README dans son dépôt** : c'
 
 ## 8. Qui fait quoi
 
-Équipe réduite, rôles clairs.
-
 <table>
 <tr>
 <td align="center" width="33%">
