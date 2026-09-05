@@ -133,7 +133,6 @@ On n'est pas l'équipe « on réécrit tout dans le framework de la semaine ». 
 
 ### ❌ À éviter
 
-- **Pas de `Co-Authored-By` dans les commits.** Jamais. C'est notre historique, il reste sobre.
 - **Pas de secret dans git.** Si ça arrive : fais tourner le secret, *puis* nettoie l'historique. Dans cet ordre.
 - **Pas de `npm`/`npx` côté front.** On est en `pnpm`, on y tient.
 - **Pas de code sans design approuvé.** On cadre, on valide, *ensuite* on code.
@@ -173,9 +172,7 @@ docs(readme): complète la section serveurs
 
 Types courants : `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`. Un changement cassant ? `feat!:` ou un footer `BREAKING CHANGE:`.
 
-Deux garde-fous :
-- Un changement logique par commit. Si ton message a besoin du mot « et », c'est probablement deux commits qui font semblant.
-- **Pas de `Co-Authored-By`.** (Oui, on le redit. C'est important.)
+Garde-fou : un changement logique par commit. Si ton message a besoin du mot « et », c'est probablement deux commits qui font semblant.
 
 ### Pull requests
 
