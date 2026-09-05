@@ -1,21 +1,3 @@
-<div align="center">
-
-# Quant Studio SARL
-
-**Groupe technologique — Cotonou, Bénin 🇧🇯**
-
-*Édition de logiciels · SaaS académique · Formation data & IA*
-
-![Bénin](https://img.shields.io/badge/Cotonou-B%C3%A9nin-008751?style=for-the-badge&labelColor=E8112D)
-![OHADA](https://img.shields.io/badge/March%C3%A9-OHADA-FCD116?style=for-the-badge&labelColor=333)
-![Odoo](https://img.shields.io/badge/Odoo-19-714B67?style=for-the-badge&logo=odoo&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-</div>
-
----
-
 # Bienvenue dans l'équipe
 
 Salut, et bienvenue. Si tu lis ça, c'est que tu viens d'être recruté·e — donc que quelqu'un ici t'a fait assez confiance pour te donner un siège sur notre GitHub. Félicitations, et merci d'embarquer. On est vraiment contents de t'avoir.
@@ -323,9 +305,3 @@ Si tu as lu jusqu'ici et que quelque chose manque, n'est pas clair, ou est carr�
 2. Pas sûr·e de la formulation ? Écris-le mal d'abord, la revue corrigera. Un mauvais brouillon vaut mieux qu'un README parfait qui n'existe pas.
 
 Bienvenue à bord. Maintenant va lire le README du projet qui t'a été confié, et essaie de le lancer en local avant le déjeuner. On est contents de t'avoir.
-
----
-
-<div align="center">
-<sub>⚡ <b>Quant Studio SARL</b> · Cotonou, Bénin · page d'onboarding interne</sub>
-</div>
